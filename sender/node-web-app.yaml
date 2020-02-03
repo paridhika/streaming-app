@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-app-demo
+  labels:
+    purpose: demonstrate_web_app
+spec:
+  containers:
+  - name: webapp-demo-container
+    image: paridhika/testimages:node-web-app
+    ports:
+        - name: webapp
+          containerPort: 80
+          protocol: TCP
+    env:
+    - name: DEMO_GREETING
+      value: "Hello from the environment"
+    - name: DEMO_FAREWELL
+      value: "Such a sweet sorrow"

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: video-demo-sender
+  labels:
+    purpose: demonstrate_streaming
+spec:
+  containers:
+  - name: sender-demo-container
+    image: paridhika/testimages:video-sender
+    ports:
+        - name: video
+          containerPort: 3000
+          protocol: TCP
