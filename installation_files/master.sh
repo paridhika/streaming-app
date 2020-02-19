@@ -25,4 +25,11 @@ sysctl --system
 # Install Flannel
 # kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.11.0/Documentation/kube-flannel.yml
 
+kubectl apply -f https://github.com/kubernetes/cloud-provider-openstack/raw/release-1.15/cluster/addons/rbac/cloud-controller-manager-roles.yaml
+kubectl apply -f https://github.com/kubernetes/cloud-provider-openstack/raw/release-1.15/cluster/addons/rbac/cloud-controller-manager-role-bindings.yaml
 
+# check if token is expired
+kubeadm token list
+
+# re-create token and show join command
+kubeadm token create --print-join-command
