@@ -6,7 +6,7 @@ const app = express();
 
 // const args = process.argv;
 // const ipAddr = "http://" + args[2] + ":" + args[3] + "/video";
-// const ipAddr = "http://172.16.1.20:3000/video";
+// const ipAddr = "http://172.17.0.7:3000/video";
 const ipAddr = "http://localhost:3000/video";
 //var server = require('http').Server(app);
 

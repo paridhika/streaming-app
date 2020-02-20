@@ -1,25 +1,20 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: streaming-deployment
+  name: receiver-deployment
 spec:
   selector:
     matchLabels:
       app: video-demo
-  replicas: 1 # tells deployment to run 2 pods matching the template
+  replicas: 1 
   template:
     metadata:
       labels:
         app: video-demo
     spec:
       containers:
-      - name: sender-demo-container
-        image: paridhika/testimages:video-sender-raspbian
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 3000
       - name: receiver-demo-container
-        image: paridhika/testimages:video-receiver-raspbian
+        image: paridhika/testimages:video-receiver
         imagePullPolicy: Always
         ports:
         - containerPort: 8001

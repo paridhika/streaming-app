@@ -1,14 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: video-demo-sender
+  name: video-demo-sender-raspbian
   labels:
     purpose: demonstrate_streaming
 spec:
   containers:
-  - name: sender-demo-container
-    image: paridhika/testimages:video-sender
+  - name: sender-demo-container-raspbian
+    image: paridhika/testimages:video-sender-raspbian
     ports:
         - name: video
           containerPort: 3000
           protocol: TCP
+        nodeSelector:
+          nodeName: Robson

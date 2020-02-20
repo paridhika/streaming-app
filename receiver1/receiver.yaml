@@ -1,16 +1,18 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: video-demo-receiver
+  name: video-demo-receiver-raspbian
   labels:
     purpose: demonstrate_streaming
 spec:
   containers:
-  - name: receiver-demo-container
-    image: paridhika/testimages:video-receiver2
+  - name: receiver-demo-container-raspbian
+    image: paridhika/testimages:video-receiver-raspbian
     imagePullPolicy: Always
     ports:
         - name: video
           containerPort: 8001
           protocol: TCP
+        nodeSelector:
+          nodeName: Logan
     
