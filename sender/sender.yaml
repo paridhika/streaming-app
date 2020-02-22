@@ -8,9 +8,10 @@ spec:
   containers:
   - name: sender-demo-container-raspbian
     image: paridhika/testimages:video-sender-raspbian
+    imagePullPolicy: Always
     ports:
       - name: video
         containerPort: 3000
         protocol: TCP
-  nodeSelector:
-    Name: logan
+  # nodeSelector:
+  #   Name: logan

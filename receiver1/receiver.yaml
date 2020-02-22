@@ -13,6 +13,6 @@ spec:
     - name: video
       containerPort: 8001
       protocol: TCP
-  nodeSelector:
-    nodeName: Logan
+  # nodeSelector:
+  #   nodeName: logan
     
