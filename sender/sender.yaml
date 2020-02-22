@@ -9,8 +9,8 @@ spec:
   - name: sender-demo-container-raspbian
     image: paridhika/testimages:video-sender-raspbian
     ports:
-        - name: video
-          containerPort: 3000
-          protocol: TCP
-        nodeSelector:
-          nodeName: Robson
+      - name: video
+        containerPort: 3000
+        protocol: TCP
+  nodeSelector:
+    Name: logan

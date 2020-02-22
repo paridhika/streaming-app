@@ -1,10 +1,12 @@
 #!/bin/sh
 sudo kubeadm config images pull -v3
-sudo kubeadm init --token-ttl=0
+sudo kubeadm init --token-ttl=0 --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address $MASTER_IP
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+export KUBECONFIG=$HOME/.kube/config
 
 # Install Weave Net
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
