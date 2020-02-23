@@ -13,11 +13,13 @@ systemctl enable --now kubelet
 sudo sysctl net.bridge.bridge-nf-call-ip6tables=1
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
 sudo sysctl net.bridge.bridge-nf-call-arptables=1
+sudo sysctl net.ipv4.ip_forward=1 
 
 cat <<EOF >  /etc/sysctl.d/kube.conf
 net.bridge.bridge-nf-call-ip6tables=1
 net.bridge.bridge-nf-call-iptables=1
 net.bridge.bridge-nf-call-arptables=1
+net.ipv4.ip_forward=1
 EOF
 sysctl --system
 
