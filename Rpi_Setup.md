@@ -50,7 +50,7 @@ echo $orig | sudo tee /boot/cmdline.txt
 
 ```
 
-#### reboot to apply changes
+#### Reboot to apply changes
 ```
 reboot
 setenforce 0
