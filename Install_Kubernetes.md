@@ -38,3 +38,11 @@ net.ipv4.ip_forward=1
 EOF
 sysctl --system
 ```
+
+#### check if br_netfilter module is loaded if not, load it explicitly
+```
+lsmod | grep br_netfilter
+
+modprobe br_netfilter
+```
+
