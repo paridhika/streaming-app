@@ -5,7 +5,7 @@
 
 #### [Kubernetes Installation Instructions](./Install_Kubernetes.md)
 #### [Start Kubernetes Master Instructions](./Master.md)
-#### [Start worker Installation Instructions](./Worker.md)
+#### [Start Kubernetes worker Instructions](./Worker.md)
 
 #### [Clean up and Logging Instructions](./Install_Docker.md)
 
