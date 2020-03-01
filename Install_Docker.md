@@ -12,7 +12,7 @@ systemctl start docker.service
 docker info
 ```
 
-## Disable Swap
+#### Disable Swap
 ```
 sudo dphys-swapfile swapoff && \
 sudo dphys-swapfile uninstall && \
