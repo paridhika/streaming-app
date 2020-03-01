@@ -39,7 +39,7 @@ EOF
 sysctl --system
 ```
 
-#### check if br_netfilter module is loaded if not, load it explicitly
+#### Check if br_netfilter module is loaded if not, load it explicitly
 ```
 lsmod | grep br_netfilter
 
