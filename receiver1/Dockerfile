@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8001
-CMD [ "node", "serverB.js" ]
+CMD [ "node", "serverB.js", "localhost", "3000", "8001" ]

@@ -13,16 +13,28 @@ spec:
         app: video-demo
     spec:
       containers:
-      - name: sender-demo-container
+      - name: sender-demo-containerA
         image: paridhika/testimages:video-sender-raspbian
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
-      - name: receiver-demo-container
+      - name: receiver-demo-containerB
         image: paridhika/testimages:video-receiver-raspbian
         imagePullPolicy: Always
         ports:
         - containerPort: 8001
-    
-      
-
+      - name: receiver-demo-containerC
+        image: paridhika/testimages:video-receiver-raspbian
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8002
+      - name: receiver-demo-containerD
+        image: paridhika/testimages:video-receiver-raspbian
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8003
+      - name: receiver-demo-containerE
+        image: paridhika/testimages:video-receiver-raspbian
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8004

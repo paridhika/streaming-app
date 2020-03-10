@@ -7,12 +7,12 @@ metadata:
 spec:
   containers:
   - name: receiver-demo-container-raspbian
-    image: paridhika/testimages:video-receiver-raspbian
+    image: paridhika/testimages:video-receiver
     imagePullPolicy: Always
+    command: ["node", "serverB.js"]
+    args: ["localhost", "8001","8002"]
     ports:
     - name: video
-      containerPort: 8001
+      containerPort: 8002
       protocol: TCP
-  # nodeSelector:
-  #   nodeName: logan
     

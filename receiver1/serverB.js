@@ -3,13 +3,15 @@ const express = require('express')
 var fs = require('fs');
 const path = require('path')
 const app = express();
+var myArgs = process.argv.slice(2);
+// console.log('myArgs: ', myArgs);
 
 // const args = process.argv;
 // const ipAddr = "http://" + args[2] + ":" + args[3] + "/video";
 // const ipAddr = "http://172.17.0.7:3000/video";
-const ipAddr = "http://localhost:3000/video";
+const ipAddr = "http://" + myArgs[0] + ":" + myArgs[1] + "/video";
 //var server = require('http').Server(app);
-
+console.log(ipAddr);
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res) {
@@ -28,8 +30,8 @@ app.get('/video', function(req, returnResponse) {
     });
     
 })
-app.listen(8001, function () {
-    console.log('Listening on port 8001!')
+app.listen(myArgs[2], function () {
+    console.log('Listening on port ' + myArgs[2] + ' !')
   })
 //console.log("listening");
 

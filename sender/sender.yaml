@@ -7,11 +7,9 @@ metadata:
 spec:
   containers:
   - name: sender-demo-container-raspbian
-    image: paridhika/testimages:video-sender-raspbian
+    image: paridhika/testimages:video-sender
     imagePullPolicy: Always
     ports:
       - name: video
         containerPort: 3000
         protocol: TCP
-  # nodeSelector:
-  #   Name: logan

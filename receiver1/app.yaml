@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: video-demo
+  labels:
+    purpose: streaming-demo
+    app: video-demo
+spec:
+  containers:
+  - name: sender-demo-container-a
+    image: paridhika/testimages:video-sender-raspbian
+    imagePullPolicy: Always
+    ports:
+    - name: video
+      containerPort: 3000
+      protocol: TCP
+  - name: receiver-demo-container-b
+    image: paridhika/testimages:video-receiver-raspbian
+    imagePullPolicy: Always
+    command: ["node", "serverB.js"]
+    args: ["localhost", "3000","8001"]
+    ports:
+    - name: video
+      containerPort: 8001
+      protocol: TCP
+  - name: receiver-demo-container-c
+    image: paridhika/testimages:video-receiver-raspbian
+    imagePullPolicy: Always
+    command: ["node", "serverB.js"]
+    args: ["localhost", "8001","8002"]
+    ports:
+    - name: video
+      containerPort: 8002
+      protocol: TCP
+  - name: receiver-demo-container-d
+    image: paridhika/testimages:video-receiver-raspbian
+    imagePullPolicy: Always
+    command: ["node", "serverB.js"]
+    args: ["localhost", "8001","8003"]
+    ports:
+    - name: video
+      containerPort: 8003
+      protocol: TCP  
+  - name: receiver-demo-container-e
+    image: paridhika/testimages:video-receiver-raspbian
+    imagePullPolicy: Always
+    command: ["node", "serverB.js"]
+    args: ["localhost", "8003","8004"]
+    ports:
+    - name: video
+      containerPort: 8004
+      protocol: TCP
