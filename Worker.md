@@ -1,7 +1,7 @@
 #### Open ports for running the application
 ```
-sudo ufw allow 30000:40000/tcp
-sudo ufw allow 30000:40000/udp
+sudo ufw allow 30000:32767/tcp
+sudo ufw allow 30000:32767/udp
 sudo ufw allow http
 sudo allow https
 sudo allow 3000
