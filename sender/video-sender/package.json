@@ -2,7 +2,7 @@
   "name": "video-stream-sender",
   "version": "1.0.0",
   "description": "Streaming video example",
-  "main": "server.js",
+  "main": "serverA.js",
   "engines": {
     "node": ">=6.2.0"
   },

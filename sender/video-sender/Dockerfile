@@ -15,5 +15,5 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 8001
-CMD [ "node", "serverB.js", "localhost", "3000", "8001" ]
+EXPOSE 8000
+CMD [ "node", "server.js","localhost", "8081", "8000"  ]

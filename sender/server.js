@@ -7,22 +7,22 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.htm'))
+
 })
 
 
 const videoPath = 'assets/sample.mp4';
 
 app.get('/video', function(req, res) {
-  //const path = 'assets/sample.mp4'
+  
   const startTime = process.hrtime()[1];
   console.log(startTime);
   const inputStream = fs.createReadStream(videoPath);
   const stat = fs.statSync(videoPath)
   const fileSize = stat.size
-  console.log(fileSize);
   const range = req.headers.range;
 
-  if (!true) {
+  if (range) {
     const parts = range.replace(/bytes=/, "").split("-")
     const start = parseInt(parts[0], 10)
     const end = parts[1]

@@ -13,6 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.3",
+    "fs-read-stream-over-http": "^0.2.2",
+    "node-downloader-helper": "^1.0.12",
     "nodemon": "^1.11.0"
   }
 }
