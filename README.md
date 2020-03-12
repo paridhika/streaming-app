@@ -7,5 +7,5 @@
 #### [Start Kubernetes Master Instructions](./Master.md)
 #### [Start Kubernetes Worker Instructions](./Worker.md)
 
-#### [Clean up and Logging Instructions](./Install_Docker.md)
+#### [Clean up and Logging Instructions](./reset_logs.md)
 
